@@ -1,0 +1,16 @@
+﻿﻿@using RecetasDeCocina.Data.Models
+
+<select id="Dificultad" name="Dificultad" class="form-control">
+    <option>Dificultad</option>
+    @foreach (Dificultad item in ViewBag.Dificultades)
+    {
+        if (((Dificultad?)ViewBag.DificultadSeleccionada).HasValue && ((Dificultad?)ViewBag.DificultadSeleccionada).Value == item)
+        {
+            <option value="@item" selected>@item</option>
+        }
+        else
+        {
+            <option value="@item">@item</option>
+        }
+    }
+</select>
